@@ -61,6 +61,7 @@ RSpec.configure do |config|
      DatabaseCleaner.cleaning do
        example.run
      end
+    end 
   config.use_transactional_fixtures = true
 
   # RSpec Rails can automatically mix in different behaviours to your tests
