@@ -2,8 +2,8 @@ class Movie < ApplicationRecord
   belongs_to :user
 
   validates :name, presence: true
-  validates :hours, presence: true
-  validates :hours_goal, presence: true
-  validates :projects, presence: true
-  validates :projects_goal, presence: true
+  validates :episode, presence: true
+  validates :episode_goal, presence: true
+  validates :season, presence: true
+  validates :season_goal, presence: true
 end
