@@ -6,4 +6,8 @@ class Movie < ApplicationRecord
   validates :episode_goal, presence: true
   validates :season, presence: true
   validates :season_goal, presence: true
+
+  scope :user_movies, lambda { |id|
+    where(user_id: id)
+  }
 end

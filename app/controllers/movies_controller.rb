@@ -2,6 +2,11 @@ class MoviesController < ApplicationController
   before_action :logged_in_user
   before_action :set_movie, only: %i[show update destroy]
 
+  def index
+    movie = Movie.user_movies(logged_in_user.id).order(created_at: :desc)
+    render json: movie
+  end
+
   def create
     movie = logged_in_user.movies.create!(movie_params)
     if movie
