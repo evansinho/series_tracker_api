@@ -19,6 +19,14 @@ class MoviesController < ApplicationController
     end
   end
 
+  def update
+    if @set_movie.update(movie_params)
+      render json: { status: :created, movie: @set_movie }
+    else
+      render json: @set_movie.errors
+    end
+  end
+
   private
 
   def movie_params
