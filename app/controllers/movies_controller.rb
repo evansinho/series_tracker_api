@@ -11,6 +11,14 @@ class MoviesController < ApplicationController
     end
   end
 
+  def show
+    if @set_movie
+      render json: @set_movie
+    else
+      render json: @set_movie.errors
+    end
+  end
+
   private
 
   def movie_params
