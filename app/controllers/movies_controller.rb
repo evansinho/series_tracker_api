@@ -37,6 +37,12 @@ class MoviesController < ApplicationController
     render json: { message: 'series deleted!' }
   end
 
+  def progress
+    movie = Movie.user_movies(logged_in_user.id).order(created_at: :desc)
+    progress_data = Movie.progress_calc(movie)
+    render json: { progress: progress_data }
+  end
+
   private
 
   def movie_params

@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get '/show/:id', to: 'movies#show'
   put '/update/:id', to: 'movies#update'
   delete '/destroy/:id', to: 'movies#destroy'
-  # get 'movies/progress'
+  get 'movies/progress'
   post "/signup", to: "users#create"
   post "/login", to: "users#login"
 end

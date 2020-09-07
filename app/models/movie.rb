@@ -10,4 +10,13 @@ class Movie < ApplicationRecord
   scope :user_movies, lambda { |id|
     where(user_id: id)
   }
+
+  def self.progress_calc(movie)
+    hash = {}
+    hash['total_episode'] = movie.inject(0) { |sum, e| sum + e.episode }
+    hash['total_episode_goal'] = movie.inject(0) { |sum, e| sum + e.episode_goal }
+    hash['total_season'] = movie.inject(0) { |sum, e| sum + e.season }
+    hash['total_season_goal'] = movie.inject(0) { |sum, e| sum + e.season_goal }
+    hash
+  end
 end
