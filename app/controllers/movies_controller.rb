@@ -27,6 +27,11 @@ class MoviesController < ApplicationController
     end
   end
 
+  def destroy
+    @set_movie&.destroy
+    render json: { message: 'series deleted!' }
+  end
+
   private
 
   def movie_params
