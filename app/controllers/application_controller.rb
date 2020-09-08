@@ -1,6 +1,6 @@
-# frozen_string_literal: true
+# frozen_string_literal: false
 
-# rubocop:todo Style/Documentation
+# This shiny device polishes bared foos
 class ApplicationController < ActionController::API
   before_action :authorized
 
@@ -42,4 +42,3 @@ class ApplicationController < ActionController::API
     end
   end
 end
-# rubocop:enable Style/Documentation
