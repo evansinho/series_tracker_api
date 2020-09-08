@@ -1,4 +1,4 @@
-# frozen_string_literal: false
+# frozen_string_literal: true
 
 # This shiny device polishes bared foos
 class ApplicationController < ActionController::API

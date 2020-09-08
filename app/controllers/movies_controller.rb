@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
-# rubocop:disable Layout/LineLength
-
-# rubocop:todo Style/Documentation
+# This shiny device polishes bared foos
 class MoviesController < ApplicationController
   before_action :logged_in_user
   before_action :set_movie, only: %i[show update destroy]
@@ -51,12 +49,12 @@ class MoviesController < ApplicationController
   private
 
   def movie_params
-    params.require(:movie).permit(:name, :episode, :episode_goal, :season, :season_goal, :user_id)
+    params.require(:movie).permit(:name, :episode,
+                                  :episode_goal, :season,
+                                  :season_goal, :user_id)
   end
 
   def set_movie
     @set_movie ||= Movie.find(params[:id])
   end
 end
-# rubocop:enable Style/Documentation
-# rubocop:enable Layout/LineLength
