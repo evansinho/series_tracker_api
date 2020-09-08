@@ -3,7 +3,7 @@ In this app you can keep track of your favourite movie series, based on a goal y
 
 ## API Links
 
-> [LINk]().
+> [LINk](https://immense-dusk-13622.herokuapp.com/).
 
 ## API ENDPOINTS                                
 - POST /signup	                                 
