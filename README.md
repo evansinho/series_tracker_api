@@ -5,15 +5,15 @@ In this app you can keep track of your favourite movie series, based on a goal y
 
 > [LINk]().
 
-## API ENDPOINTS                                ## Functionality
-POST /signup	                                  Signup
-POST /login	                                    Login
-GET /movies/index	                              List all movie series by a user
-POST /movies/create	                            create a series to track
-GET /show/:id	                                  show a particular movie series
-UPDATE /update/:id	                            update a particular series
-DELETE /destroy/:id	                            delete a particular series
-GET /movie/progress	                            Get overall progress of a particular series
+## API ENDPOINTS                                
+- POST /signup	                                 
+- POST /login	                                    
+- GET /movies/index	                              
+- POST /movies/create	                            
+- GET /show/:id	                                  
+- UPDATE /update/:id	                           
+- DELETE /destroy/:id	                           
+- GET /movie/progress
 
 ## Features
 1. User can sign up.
