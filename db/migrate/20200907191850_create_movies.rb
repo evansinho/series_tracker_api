@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# rubocop:todo Style/Documentation
 class CreateMovies < ActiveRecord::Migration[6.0]
   def change
     create_table :movies do |t|
@@ -12,3 +15,4 @@ class CreateMovies < ActiveRecord::Migration[6.0]
     end
   end
 end
+# rubocop:enable Style/Documentation

@@ -1,3 +1,8 @@
+# frozen_string_literal: true
+
+# rubocop:disable Layout/LineLength
+
+# rubocop:todo Style/Documentation
 class MoviesController < ApplicationController
   before_action :logged_in_user
   before_action :set_movie, only: %i[show update destroy]
@@ -53,3 +58,5 @@ class MoviesController < ApplicationController
     @set_movie ||= Movie.find(params[:id])
   end
 end
+# rubocop:enable Style/Documentation
+# rubocop:enable Layout/LineLength

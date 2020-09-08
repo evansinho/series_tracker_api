@@ -1,4 +1,8 @@
-class Movie < ApplicationRecord
+# frozen_string_literal: true
+
+# rubocop:disable Layout/LineLength
+
+class Movie < ApplicationRecord # rubocop:todo Style/Documentation
   belongs_to :user
 
   validates :name, presence: true
@@ -20,3 +24,4 @@ class Movie < ApplicationRecord
     hash
   end
 end
+# rubocop:enable Layout/LineLength

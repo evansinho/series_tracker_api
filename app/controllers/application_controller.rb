@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# rubocop:todo Style/Documentation
 class ApplicationController < ActionController::API
   before_action :authorized
 
@@ -13,7 +14,7 @@ class ApplicationController < ActionController::API
   end
 
   def decoded_token
-    if auth_header
+    if auth_header # rubocop:todo Style/GuardClause
       token = auth_header.split(' ')[1]
       # header: { 'Authorization': 'Bearer <token>' }
       begin
@@ -25,18 +26,20 @@ class ApplicationController < ActionController::API
   end
 
   def logged_in_user
-    if decoded_token
+    if decoded_token # rubocop:todo Style/GuardClause
       user_id = decoded_token[0]['user_id']
       @user = User.find_by(id: user_id)
     end
   end
 
   def logged_in?
-    !!logged_in_user
+    !!logged_in_user # rubocop:todo Style/DoubleNegation
   end
 
   def authorized
-    render json: { message: 'Please log in' }, status: :unauthorized unless logged_in?
+    unless logged_in? # rubocop:todo Style/GuardClause
+      render json: { message: 'Please log in' }, status: :unauthorized
+    end
   end
-
 end
+# rubocop:enable Style/Documentation
