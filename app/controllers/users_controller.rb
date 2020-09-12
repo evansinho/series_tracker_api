@@ -2,6 +2,7 @@
 
 class UsersController < ApplicationController # rubocop:todo Style/Documentation
   before_action :authorized, only: [:auto_login]
+  before_action :logged_in_user, only: %i[auth]
   # REGISTER
   def create
     @user = User.create(user_params)
@@ -23,6 +24,17 @@ class UsersController < ApplicationController # rubocop:todo Style/Documentation
     else
       render json: { error: @user.errors.full_messages }
     end
+  end
+
+  # Auth
+  def auth
+    @user = User.find_by_id(logged_in_user.id)
+
+    if @user
+      render json: { user: @user }
+    else
+      render json: { error: @user.errors.full_messages }
+    end  
   end
 
   def auto_login
