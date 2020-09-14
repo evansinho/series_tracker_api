@@ -10,5 +10,5 @@ Rails.application.routes.draw do
   get 'movies/progress'
   post '/signup', to: 'users#create'
   post '/login', to: 'users#login'
-  get '/auth', to: 'users#auth'
+  get '/auto_login', to: 'users#auto_login'
 end

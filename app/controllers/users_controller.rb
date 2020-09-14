@@ -26,17 +26,6 @@ class UsersController < ApplicationController # rubocop:todo Style/Documentation
     end
   end
 
-  # Auth
-  def auth
-    @user = User.find_by_id(logged_in_user.id)
-
-    if @user
-      render json: { user: @user }
-    else
-      render json: { error: @user.errors.full_messages }
-    end  
-  end
-
   def auto_login
     render json: @user
   end
