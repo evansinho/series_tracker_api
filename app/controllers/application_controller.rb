@@ -36,8 +36,6 @@ class ApplicationController < ActionController::API
   end
 
   def authorized
-    unless logged_in? # rubocop:todo Style/GuardClause
-      render json: { message: 'Please log in' }, status: :unauthorized
-    end
+    render json: { message: 'Please log in' }, status: :unauthorized unless logged_in?
   end
 end

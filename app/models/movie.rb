@@ -22,4 +22,3 @@ class Movie < ApplicationRecord
     hash
   end
 end
-# rubocop:enable Layout/LineLength
