@@ -1,5 +1,5 @@
-# frozen_string_literal: true
 # This shiny device polishes bared foos
+
 class User < ApplicationRecord
   has_many :movies, dependent: :destroy
   validates :name, presence: true, length: { in: 3..20 }
