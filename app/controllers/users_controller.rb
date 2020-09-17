@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+
 
 class UsersController < ApplicationController # rubocop:todo Style/Documentation
   before_action :authorized, only: [:auto_login]

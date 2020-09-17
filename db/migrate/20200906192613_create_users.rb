@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+
 
 # rubocop:todo Style/Documentation
 class CreateUsers < ActiveRecord::Migration[6.0]
