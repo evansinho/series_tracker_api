@@ -1,8 +1,7 @@
 # frozen_string_literal: true
-
 # rubocop:disable Layout/LineLength
-
-class Movie < ApplicationRecord # rubocop:todo Style/Documentation
+# This shiny device polishes bared foos
+class Movie < ApplicationRecord
   belongs_to :user
 
   validates :name, presence: true

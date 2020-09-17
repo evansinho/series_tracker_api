@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 # This shiny device polishes bared foos
 class MoviesController < ApplicationController
   before_action :logged_in_user
