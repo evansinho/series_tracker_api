@@ -8,7 +8,10 @@ class UsersController < ApplicationController
     @user = User.create(user_params)
     if @user.valid?
       token = encode_token({ user_id: @user.id })
-      render json: { user: @user, token: token }
+      render json: { user: { 
+        name: @user.name,
+        email: @user.email
+      }, token: token }
     else
       render json: { error: @user.errors.full_messages }
     end
@@ -20,7 +23,9 @@ class UsersController < ApplicationController
 
     if @user&.authenticate(params[:password])
       token = encode_token({ user_id: @user.id })
-      render json: { user: @user, token: token }
+      render json: { user: { 
+        email: @user.email
+      }, token: token }
     else
       render json: { error: @user.errors.full_messages }
     end
