@@ -10,7 +10,7 @@ class Movie < ApplicationRecord
   validates :season_goal, presence: true
 
   scope :user_movies, lambda { |id|
-    where(user_id: id)
+    where(user_id: id).order(created_at: :desc)
   }
 
   def self.progress_calc(movie)

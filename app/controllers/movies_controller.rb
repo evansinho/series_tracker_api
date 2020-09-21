@@ -5,7 +5,7 @@ class MoviesController < ApplicationController
   before_action :set_movie, only: %i[show update destroy]
 
   def index
-    movie = Movie.user_movies(logged_in_user.id).order(created_at: :desc)
+    movie = Movie.user_movies(logged_in_user.id)
     render json: movie
   end
 
@@ -40,7 +40,7 @@ class MoviesController < ApplicationController
   end
 
   def progress
-    movie = Movie.user_movies(logged_in_user.id).order(created_at: :desc)
+    movie = Movie.user_movies(logged_in_user.id)
     progress_data = Movie.progress_calc(movie)
     render json: { progress: progress_data }
   end
