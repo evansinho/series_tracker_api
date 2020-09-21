@@ -32,7 +32,7 @@ class UsersController < ApplicationController
   end
 
   def auto_login
-    if @user
+    if @user # rubocop:todo Style/GuardClause
       token = encode_token({ user_id: @user.id })
       render json: { user: @user, token: token }
     end
