@@ -62,11 +62,6 @@ Feel free to check the [issues page](https://github.com/evansinho/series_tracker
 
 Give a ⭐️ if you like this project!
 
-## Acknowledgments
-
-- MIcroverse
-- Microverse TSE's
-
 ## 📝 License
 
 This project is [Apache](lic.url) licensed.
